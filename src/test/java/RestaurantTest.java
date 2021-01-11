@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -39,12 +41,18 @@ class RestaurantTest {
 
     @Test
     public void get_total_item_amount_should_return_sum_of_selected_item_prices() {
-
+        setup();
+        List<Item> selectedItems = new ArrayList<>();
+        selectedItems.add(restaurant.findItemByName("Sweet corn soup"));
+        selectedItems.add(restaurant.findItemByName("Vegetable lasagne"));
+        assertEquals(388, restaurant.getTotalItemAmount(selectedItems));
     }
 
     @Test
     public void get_total_item_amount_should_return_zero_if_no_items_are_selected() {
-        
+        setup();
+        List<Item> selectedItems = new ArrayList<>();
+        assertEquals(0, restaurant.getTotalItemAmount(selectedItems));
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
