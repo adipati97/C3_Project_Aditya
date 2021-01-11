@@ -37,6 +37,16 @@ class RestaurantTest {
         assertFalse(mockedRestaurant.isRestaurantOpen());
     }
 
+    @Test
+    public void get_total_item_amount_should_return_sum_of_selected_item_prices() {
+
+    }
+
+    @Test
+    public void get_total_item_amount_should_return_zero_if_no_items_are_selected() {
+        
+    }
+
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
